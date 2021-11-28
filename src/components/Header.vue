@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style lanf="scss">
+<style lanf="scss" scoped>
   div{
     height: 50px;
     background-color: #2E3A46;

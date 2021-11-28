@@ -2,19 +2,24 @@
   <div>
     <div class="main-wrapper">
       <Header />
-
+      <div class="container">
+        <CharacterList />
+      </div>
+      
     </div>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import CharacterList from './components/CharacterList.vue'
 
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    CharacterList
     
   }
 }
