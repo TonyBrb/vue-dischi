@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row pb-5">
 
     <Character 
     v-for="(character,index) in characters"
@@ -13,7 +13,7 @@
 
 <script>
 
-import axios from "axios";
+import axios from 'axios';
 import Character from "./Character";
 
 export default {
@@ -23,14 +23,15 @@ export default {
   },
   data(){
     return{
-      chatacters:[]
+      characters:[]
     }
   },
   methods:{
     getApi(){
       axios.get('https://flynn.boolean.careers/exercises/api/array/music')
       .then( r => {
-        this.chatacters = r.data;
+        this.characters = r.data.response;
+        console.log('characters',this.characters);
       })
       .catch( e => {
         console.log(e);

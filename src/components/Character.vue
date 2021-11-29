@@ -1,5 +1,5 @@
 <template>
-  <div class="col text-center mt-5">
+  <div class="col-2 text-center mt-5">
     <img :src="character.poster" alt="">
     <h5>{{character.title}}</h5>
     <h6>{{character.author}}</h6>
