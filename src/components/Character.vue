@@ -1,6 +1,6 @@
 <template>
   <div class="col-2 text-center mt-5">
-    <img :src="character.poster" alt="">
+    <img :src="character.poster" alt="character.title">
     <h5>{{character.title}}</h5>
     <h6>{{character.author}}</h6>
     <h6 class="last">{{character.year}}</h6>

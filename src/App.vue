@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="main-wrapper">
-      <Header />
+      <Header  @changeGenre="selectionGenre"/>
       <div class="container">
-        <CharacterList />
+        <CharacterList :genreToSearch="genreSelected"/>
       </div>
       
     </div>
@@ -20,7 +20,17 @@ export default {
   components: {
     Header,
     CharacterList
-    
+  },
+  data(){
+    return{
+      genreSelected:''
+    }
+  },
+  methods:{
+    selectionGenre(type){
+      this.genreSelected=type;
+      console.log(this.genreSelected);
+    }
   }
 }
 </script>

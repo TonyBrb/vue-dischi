@@ -2,7 +2,7 @@
   <div class="row pb-5">
 
     <Character 
-    v-for="(character,index) in characters"
+    v-for="(character,index) in filteredCharacters"
     :key="index"
     :character="character"
     />
@@ -21,9 +21,21 @@ export default {
   components:{
     Character,
   },
+  props:{
+    genreToSearch: String
+  },
   data(){
     return{
-      characters:[]
+      characters:[],
+      typeToSearch:''
+    }
+  },
+  computed:{
+    filteredCharacters(){
+      if(this.genreToSearch===''){
+        return this.characters;
+      }
+      return this.characters.filter(characters => characters.genre === this.genreToSearch);
     }
   },
   methods:{
@@ -31,7 +43,6 @@ export default {
       axios.get('https://flynn.boolean.careers/exercises/api/array/music')
       .then( r => {
         this.characters = r.data.response;
-        console.log('characters',this.characters);
       })
       .catch( e => {
         console.log(e);
